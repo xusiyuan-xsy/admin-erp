@@ -8,6 +8,7 @@ import { useAppStore } from '@/store/modules/app';
 import { useRouteStore } from '@/store/modules/route';
 import { useMenu } from '../../../context';
 import MenuItem from '../components/menu-item.vue';
+import { log } from 'node:console';
 
 defineOptions({ name: 'VerticalMenu' });
 
@@ -26,6 +27,14 @@ function updateExpandedKeys() {
     return;
   }
   expandedKeys.value = routeStore.getSelectedMenuKeyPath(selectedKey.value);
+  console.log('expandedKeys___',expandedKeys.value);
+  console.log('selectedKey___',selectedKey.value);
+  console.log('routeStore___',routeStore.menus);
+  
+  
+  console.log('selectedKeyDummy___',selectedKeyDummy.value);
+  
+  
 }
 
 watch(
